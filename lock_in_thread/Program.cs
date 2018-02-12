@@ -19,5 +19,14 @@ namespace lock_in_thread
                 Console.WriteLine(Environment.TickCount);
             }
         }
+
+        static void Main(string[] args)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                ThreadStart start = new ThreadStart(TEST);
+                new Thread(start).Start();
+            }
+        }
     }
 }
